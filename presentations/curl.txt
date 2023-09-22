@@ -1,0 +1,1 @@
+curl -d '{ "age": 15, "distance": 500, "nos": 10 }' -H "Content-Type: application/json" -X POST https://b72b-34-135-29-173.ngrok-free.app/predict
