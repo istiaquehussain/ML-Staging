@@ -10,10 +10,15 @@ This project aims to explain various steps envolve in a typical ML projects star
 /core -> contains all source codes
 
 - Source codes 
+
 Real_estate.csv - data source for the the real state model training 
+
 RealState_Model_Src.py - Source code for model selection, training and generation 
+
 RealState_API_Scr.py - Source code for model integration with web framework 
+
 RealState_Home.html -  sample Front End page to access Model API
+
 GPT_Prompt.txt - Chat GPT Prompt to generate RealState_Home.html Contents
 
 -Steps 
