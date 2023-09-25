@@ -16,7 +16,7 @@ We will used python panda library to load data (collected from Kaggle)</font>
 
 import pandas as pd
 
-df = pd.read_csv("../data/Real_estate.csv")
+df = pd.read_csv("../Real_estate.csv")
 df.head()
 
 """
@@ -100,5 +100,5 @@ Trained model will be exported. This will be used in web framework to host the m
 
 import pickle
 
-with open('../data/model.pkl', 'wb') as file:
+with open('../model.pkl', 'wb') as file:
     pickle.dump(model, file)
