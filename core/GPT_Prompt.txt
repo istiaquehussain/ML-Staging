@@ -1,0 +1,3 @@
+Write code for a web page
+The page should have a header, a body, and a footer section. The body should have 3 text fields and one submit button. Name of the the text fields should be age, distance, and nos. Data type for all test fields should be number.The name of the submit button should be calculate.
+calculate button should POST age, distance and nos fields asynchronously to http://127.0.0.1:5000/predict URL. The Content-Type for the POST request should be application/json . Page should enable Cross-Origin. Response from the server should  be displayed in the body section of the page
