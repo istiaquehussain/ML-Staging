@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Page Example</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Web Page</h1>
+    </header>
+
+    <section>
+        <h2>Body Section</h2>
+        <form id="myForm">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br><br>
+
+            <label for="distance">Distance:</label>
+            <input type="number" id="distance" name="distance" required><br><br>
+
+            <label for="nos">Nos:</label>
+            <input type="number" id="nos" name="nos" required><br><br>
+
+            <input type="submit" value="Calculate" name="calculate">
+        </form>
+
+        <div id="response">
+            <!-- Server response will be displayed here -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Web Page</p>
+    </footer>
+
+    <script>
+        // Add event listener for form submission
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get values from form fields
+            const ageValue = document.getElementById("age").value;
+            const distanceValue = document.getElementById("distance").value;
+            const nosValue = document.getElementById("nos").value;
+
+            // Create a JSON object with the form data
+            const formData = {
+                age: Number(ageValue),
+                distance: Number(distanceValue),
+                nos: Number(nosValue)
+            };
+
+            // Create an XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Define the URL to which you want to send the data
+            const url = "http://127.0.0.1:5000/predict";
+
+            // Configure the request
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Enable Cross-Origin Resource Sharing (CORS)
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+            // Define the callback function when the request is complete
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    // Request was successful
+                    const response = JSON.parse(xhr.responseText);
+                    const responseDiv = document.getElementById("response");
+                    responseDiv.innerHTML = `<p>Server Response:</p><pre>${JSON.stringify(response, null, 2)}</pre>`;
+                } else {
+                    // Request failed
+                    console.error("Error posting data.");
+                }
+            };
+
+            // Convert the JSON object to a string and send it
+            xhr.send(JSON.stringify(formData));
+        });
+    </script>
+</body>
+</html>
