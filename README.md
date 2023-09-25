@@ -3,9 +3,11 @@
 This project aims to explain various steps envolve in a typical ML projects starting from development till deployment 
 
 
-# Table of Contents
-/presentation contains all presentation files
-/core contains all source codes
+- Table of Contents
+
+/presentation ->  contains all presentation files
+
+/core -> contains all source codes
 
 - Source codes 
 Real_estate.csv - data source for the the real state model training 
