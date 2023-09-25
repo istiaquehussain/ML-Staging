@@ -25,7 +25,7 @@ CORS(app)
 #below step is required only when application is hosted in google colab
 #run_with_ngrok(app)
 
-with open('../data/model.pkl', 'rb') as file:
+with open('../model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
