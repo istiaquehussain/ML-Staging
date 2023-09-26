@@ -25,7 +25,7 @@ CORS(app)
 #below step is required only when application is hosted in google colab
 #run_with_ngrok(app)
 
-with open('../model.pkl', 'rb') as file:
+with open('../core/model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 
@@ -49,7 +49,7 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0',port=5000)
 
 """
 Testing API
